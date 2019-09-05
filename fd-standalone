@@ -1,0 +1,22 @@
+#!/bin/bash
+
+export myIP=`ipconfig getifaddr en0`
+export pwd=`pwd`
+
+case "$1" in
+  start)
+    docker-compose -f docker-compose-fd-standalone.yml pull flowdirector
+		docker-compose -f docker-compose-fd-standalone.yml up -d
+    ;;
+  stop)
+		docker-compose -f docker-compose-fd-standalone.yml down
+    ;;
+  status)
+    docker ps
+    ;;
+  *)
+    echo "Usage: $N {start|stop|status}"
+	  exit 1
+    ;;
+esac
+exit 0

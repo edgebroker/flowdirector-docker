@@ -30,6 +30,8 @@ to see the status of the docker containers.
 
 ## Flow Director Standalone
 
+This mode is used to connect Flow Director to an existing SwiftMQ Router.
+
 Use
 
     ./fd-standalone start
@@ -48,6 +50,11 @@ Use
     ./fd-standalone status
     
 to see the status of the docker containers.
+
+Flow Director saves its configuration file `fdserver/data/config/backend.json` on the first start. Stop
+it and change the configuration. Specify the hostname, port and credentials of your SwiftMQ Router. 
+In case it runs on the same machine as Flow Director, use `dockerhost` as hostname. Then start Flow Director
+again. It should now be connected to your SwiftMQ Router.
 
 ## Configuration Changes
 

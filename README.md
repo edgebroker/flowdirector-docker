@@ -1,19 +1,19 @@
-# Flowdirector Docker Compose Templates
+# Flow Director Docker Compose Templates
 
 This repository contains docker compose templates to start/stop 
 
-- Flowdirector with SwiftMQ
-- Flowdirector standalone
+- Flow Director with SwiftMQ
+- Flow Director standalone
 
-Please clone this repository and open a shell within the root directory `flowdirector-docker`.
+Please clone this repository and open a shell within the root directory `Flow Director-docker`.
 
-## Flowdirector with SwiftMQ
+## Flow Director with SwiftMQ
 
 Use
 
     ./fd-swiftmq start
   
-to start Flowdirector and a single SwiftMQ Router. Both are started as demon. Flowdirector listens
+to start Flow Director and a single SwiftMQ Router. Both are started as demon. Flow Director listens
 on port `8080`, SwiftMQ on port `4001`.
 
 Use
@@ -28,13 +28,13 @@ Use
     
 to see the status of the docker containers.
 
-## Flowdirector Standalone
+## Flow Director Standalone
 
 Use
 
     ./fd-standalone start
   
-to start Flowdirector standalone. It is started as demon. Flowdirector listens
+to start Flow Director standalone. It is started as demon. Flow Director listens
 on port `8080`.
 
 Use
@@ -51,5 +51,5 @@ to see the status of the docker containers.
 
 ## Configuration Changes
 
-The configuration file of Flowdirector is `fdserver/data/config/backend.json`. It is created on
-the first start and preserved. Changes require a restart of Flowdirector.
+The configuration file of Flow Director is `fdserver/data/config/backend.json`. It is created on
+the first start and preserved. Changes require a restart of Flow Director.

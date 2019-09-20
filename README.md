@@ -53,8 +53,8 @@ to see the status of the docker containers.
 
 Flow Director saves its configuration file `fdserver/data/config/backend.json` on the first start. Stop
 it and change the configuration. Specify the hostname, port and credentials of your SwiftMQ Router. 
-In case it runs on the same machine as Flow Director, use `dockerhost` as hostname. Then start Flow Director
-again. It should now be connected to your SwiftMQ Router.
+In case it runs on the same machine as Flow Director, use the IP address of the host as hostname. Do *not*
+use `localhost` or `127.0.0.1`! Then start Flow Director again. It should now be connected to your SwiftMQ Router.
 
 ## Configuration Changes
 

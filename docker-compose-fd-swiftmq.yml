@@ -23,7 +23,7 @@ services:
         - ${pwd}/fdserver/data/log:/flowdirector/log
         - ${pwd}/fdserver/data/config:/flowdirector/config
     extra_hosts:
-        - "dockerhost:${myIP}"
+        - "dockerhost:172.99.0.2"
 
 networks:
   fdnet:

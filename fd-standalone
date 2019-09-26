@@ -8,6 +8,9 @@ case "$1" in
     docker-compose -f docker-compose-fd-standalone.yml pull flowdirector
 		docker-compose -f docker-compose-fd-standalone.yml up -d
     ;;
+  start-offline)
+		docker-compose -f docker-compose-fd-standalone.yml up -d
+    ;;
   stop)
 		docker-compose -f docker-compose-fd-standalone.yml down
     ;;

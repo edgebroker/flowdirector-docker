@@ -9,6 +9,9 @@ case "$1" in
     docker-compose -f docker-compose-fd-swiftmq.yml pull flowdirector
 		docker-compose -f docker-compose-fd-swiftmq.yml up -d
     ;;
+  start-offline)
+		docker-compose -f docker-compose-fd-swiftmq.yml up -d
+    ;;
   stop)
 		docker-compose -f docker-compose-fd-swiftmq.yml down
     ;;

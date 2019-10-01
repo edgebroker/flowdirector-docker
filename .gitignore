@@ -1,0 +1,6 @@
+.idea/
+.DS_Store
+fdserver/data/*
+!fdserver/data/dummy.txt
+router/data/*
+!router/data/dummy.txt

@@ -1,7 +1,7 @@
 version: '3'
 services:
   flowdirector:
-    image: "flowdirector/fdserver:SNAPSHOT"
+    image: "flowdirector/fdserver:1.0.0"
     ports:
         - "8080:8080"
     networks:

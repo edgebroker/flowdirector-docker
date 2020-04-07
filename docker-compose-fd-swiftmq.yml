@@ -1,7 +1,7 @@
 version: '3'
 services:
   router:
-    image: "iitsoftware/swiftmq-ce:12.0.2"
+    image: "iitsoftware/swiftmq-ce:12.1.0-dev"
     ports:
       - "4001:4001"
     networks:

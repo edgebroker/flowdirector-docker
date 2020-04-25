@@ -1,62 +1,24 @@
-# Flow Director Docker Compose Templates
+# Flow Director Docker Compose Template
 
-This repository contains docker compose templates to start/stop 
+This repository contains docker compose templates to start/stop Flow Director.
 
-- Flow Director with SwiftMQ
-- Flow Director standalone
-
-Please clone this repository and open a shell within the root directory `Flow Director-docker`.
-
-## Flow Director with SwiftMQ
+Please clone this repository and open a shell within the root directory `flowdirector-docker`.
 
 Use
 
-    ./fd-swiftmq start
+    ./flowdirector start
   
-to start Flow Director and a single SwiftMQ Router. Both are started as demon. Flow Director listens
-on port `8080`, SwiftMQ on port `4001`.
+to start Flow Director and a single embedded SwiftMQ Router. Flow Director listens
+on port `8080` (HTTP), SwiftMQ on port `4001` (JMS), `5672` (AMQP) and `1883` (MQTT).
 
 Use
 
-    ./fd-swiftmq stop
+    ./flowdirector stop
     
 to stop both.
 
 Use 
 
-    ./fd-swiftmq status
+    ./flowdirector status
     
 to see the status of the docker containers.
-
-## Flow Director Standalone
-
-This mode is used to connect Flow Director to an existing SwiftMQ Router.
-
-Use
-
-    ./fd-standalone start
-  
-to start Flow Director standalone. It is started as demon. Flow Director listens
-on port `8080`.
-
-Use
-
-    ./fd-standalone stop
-    
-to stop both.
-
-Use 
-
-    ./fd-standalone status
-    
-to see the status of the docker containers.
-
-Flow Director saves its configuration file `fdserver/data/config/backend.json` on the first start. Stop
-it and change the configuration. Specify the hostname, port and credentials of your SwiftMQ Router. 
-In case it runs on the same machine as Flow Director, use the IP address of the host as hostname. Do *not*
-use `localhost` or `127.0.0.1`! Then start Flow Director again. It should now be connected to your SwiftMQ Router.
-
-## Configuration Changes
-
-The configuration file of Flow Director is `fdserver/data/config/backend.json`. It is created on
-the first start and preserved. Changes require a restart of Flow Director.

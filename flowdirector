@@ -5,15 +5,11 @@ export pwd=`pwd`
 
 case "$1" in
   start)
-    docker-compose -f docker-compose-fd-swiftmq.yml pull router
-    docker-compose -f docker-compose-fd-swiftmq.yml pull flowdirector
-		docker-compose -f docker-compose-fd-swiftmq.yml up -d
-    ;;
-  start-offline)
-		docker-compose -f docker-compose-fd-swiftmq.yml up -d
+    docker-compose -f docker-compose.yml pull flowdirector
+		docker-compose -f docker-compose.yml up -d
     ;;
   stop)
-		docker-compose -f docker-compose-fd-swiftmq.yml down
+		docker-compose -f docker-compose.yml down
     ;;
   status)
     docker ps

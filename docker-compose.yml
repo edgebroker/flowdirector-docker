@@ -1,22 +1,16 @@
 version: '3'
 services:
   flowdirector:
-    image: "flowdirector/fdserver:1.0.2"
+    image: "flowdirector/fdserver:SNAPSHOT"
     ports:
-        - "8080:8080"
-    networks:
-      fdnet:
-        ipv4_address: 172.99.0.3
+        - "8080:8080"  # FD Webserver
+        - "4001:4001"  # JMS Port
+        - "5672:5672"  # AMQP Port
+        - "1883:1883"  # MQTT Port
     volumes:
         - ${pwd}/fdserver/data/apps:/flowdirector/apps
         - ${pwd}/fdserver/data/log:/flowdirector/log
         - ${pwd}/fdserver/data/config:/flowdirector/config
+        - ${pwd}/router/data:/flowdirector/router/data
     extra_hosts:
         - "dockerhost:${myIP}"
-
-networks:
-  fdnet:
-    ipam:
-      driver: default
-      config:
-        - subnet: "172.99.0.0/16"

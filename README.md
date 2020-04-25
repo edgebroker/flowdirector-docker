@@ -1,6 +1,6 @@
 # Flow Director Docker Compose Template
 
-This repository contains docker compose templates to start/stop Flow Director.
+This repository contains a docker compose template to start/stop Flow Director.
 
 Please clone this repository and open a shell within the root directory `flowdirector-docker`.
 
@@ -8,17 +8,29 @@ Use
 
     ./flowdirector start
   
-to start Flow Director and a single embedded SwiftMQ Router. Flow Director listens
-on port `8080` (HTTP), SwiftMQ on port `4001` (JMS), `5672` (AMQP) and `1883` (MQTT).
+to start Flow Director. 
+
+Flow Director embeds a SwiftMQ Router and listens on port `8080` (HTTP), `4001` (JMS), `5672` (AMQP) and `1883` (MQTT).
 
 Use
 
     ./flowdirector stop
     
-to stop both.
+to stop it.
 
 Use 
 
     ./flowdirector status
     
-to see the status of the docker containers.
+to see the status of the docker container.
+
+# Access via Browser
+
+Point your browser to [http://localhost:8080](http://localhost:8080) to use Flow Director.
+
+# Data
+
+After the first start you'll find the data of the Flow Director server under directory `fdserver/data`. The data of the 
+embedded SwiftMQ Router under `router/data`. This is purely informational as you don't need to touch it. 
+
+

@@ -7,6 +7,9 @@ services:
         - "4001:4001"  # JMS Port
         - "5672:5672"  # AMQP Port
         - "1883:1883"  # MQTT Port
+    networks:
+      fdnet:
+        ipv4_address: 172.99.0.3
     volumes:
         - ${pwd}/fdserver/data/apps:/flowdirector/apps
         - ${pwd}/fdserver/data/log:/flowdirector/log
@@ -14,3 +17,10 @@ services:
         - ${pwd}/router/data:/flowdirector/router/data
     extra_hosts:
         - "dockerhost:${myIP}"
+
+networks:
+  fdnet:
+    ipam:
+      driver: default
+      config:
+        - subnet: "172.99.0.0/16"

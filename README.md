@@ -32,6 +32,6 @@ Point your browser to [http://localhost:8080](http://localhost:8080) to use Flow
 # Data
 
 After the first start you'll find the data of the Flow Director server under directory `fdserver/data`. The data of the 
-embedded SwiftMQ Router under `router/data`. This is informational as very seldom need to touch it. 
+embedded SwiftMQ Router under `router/data`. This is informational as you very seldom need to touch it. 
 
 

@@ -10,7 +10,8 @@ Use
   
 to start Flow Director. 
 
-Flow Director embeds a SwiftMQ Router and listens on port `8080` (HTTP), `4001` (JMS), `5672` (AMQP) and `1883` (MQTT).
+Flow Director embeds a SwiftMQ Router and listens on port `8080` (HTTP), `4001` (JMS), `5672` (AMQP), `1883` (MQTT),
+and `4100` (Routing listener).
 
 Use
 
@@ -31,6 +32,6 @@ Point your browser to [http://localhost:8080](http://localhost:8080) to use Flow
 # Data
 
 After the first start you'll find the data of the Flow Director server under directory `fdserver/data`. The data of the 
-embedded SwiftMQ Router under `router/data`. This is purely informational as you don't need to touch it. 
+embedded SwiftMQ Router under `router/data`. This is informational as very seldom need to touch it. 
 
 

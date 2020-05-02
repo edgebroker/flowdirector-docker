@@ -7,6 +7,7 @@ services:
         - "4001:4001"  # JMS Port
         - "5672:5672"  # AMQP Port
         - "1883:1883"  # MQTT Port
+        - "4100:4100"  # Routing Listener
     networks:
       fdnet:
         ipv4_address: 172.99.0.3

@@ -1,20 +1,13 @@
 version: '3'
 services:
-  router:
-    image: "iitsoftware/swiftmq-ce:12.1.0-dev"
-    ports:
-      - "4001:4001"
-    networks:
-      fdnet:
-        ipv4_address: 172.99.0.2
-    volumes:
-        - ${pwd}/router/data:/swiftmq/data
-    extra_hosts:
-        - "dockerhost:${myIP}"
   flowdirector:
-    image: "flowdirector/fdserver:1.1.0"
+    image: "flowdirector/fdserver:2.0.1"
     ports:
-        - "8080:8080"
+        - "8080:8080"  # FD Webserver
+        - "4001:4001"  # JMS Port
+        - "5672:5672"  # AMQP Port
+        - "1883:1883"  # MQTT Port
+        - "4100:4100"  # Routing Listener
     networks:
       fdnet:
         ipv4_address: 172.99.0.3
@@ -22,8 +15,9 @@ services:
         - ${pwd}/fdserver/data/apps:/flowdirector/apps
         - ${pwd}/fdserver/data/log:/flowdirector/log
         - ${pwd}/fdserver/data/config:/flowdirector/config
+        - ${pwd}/router/data:/flowdirector/router/data
     extra_hosts:
-        - "dockerhost:172.99.0.2"
+        - "dockerhost:${myIP}"
 
 networks:
   fdnet:

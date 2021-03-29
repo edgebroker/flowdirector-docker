@@ -1,7 +1,7 @@
 version: '3'
 services:
   flowdirector:
-    image: "flowdirector/fdserver:2.1.1"
+    image: "flowdirector/fdserver:latest"
     ports:
         - "8080:8080"  # FD Webserver
         - "4001:4001"  # JMS Port
